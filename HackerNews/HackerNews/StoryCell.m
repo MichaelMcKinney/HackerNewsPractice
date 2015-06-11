@@ -29,7 +29,6 @@
     //[self.CommentsButton setTitle:[NSString stringWithFormat:@"%lu",[story.kids count]] forState:UIControlStateNormal];
    
     [self.button setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)[story.kids count]] forState:UIControlStateNormal];
-    NSLog(self.TitleLabel.text);
     self.button.titleLabel.font = [UIFont systemFontOfSize:18.0];
     
     

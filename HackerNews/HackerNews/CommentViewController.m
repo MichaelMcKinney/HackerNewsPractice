@@ -7,14 +7,60 @@
 //
 
 #import "CommentViewController.h"
+#import "CommentCell.h"
 
 @implementation CommentViewController
 
 
 -(void)setupCommentStoryValue:(Story *)story
 {
-    NSLog([NSString stringWithFormat:@"setting up story with ID %d",story.ID]);
     self.commentStory = story;
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.commentStory.kids count];
+}
+
+  
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    Comment *comment = Comment.new;
+    comment = [Comment newCommentWithID:[self.commentStory.kids[indexPath.row] intValue]];
+    [cell FillLabelsFromCommentToSelf:comment];
+    
+    //NSNumber *greg = [NSNumber numberWithFloat:cell.contentHeight];
+    //NSLog([NSString stringWithFormat:@"%@",greg]);
+    //[self.heightArray insertObject:greg atIndex:indexPath.row];
+    
+    return cell;
+}
+/*
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    float ok = [self.heightArray[indexPath.row] floatValue];
+    CGFloat alright = (CGFloat)ok;
+    return alright;
+}
+/*
+ DisplayComments(Article,Indent)
+    if ([Article.comments count]==0)
+    {
+        return;
+    }
+    else
+    {
+        int i=0;
+        while(i<[Article.
+    }
+
+ 
+*/
 
 @end

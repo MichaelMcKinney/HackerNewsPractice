@@ -7,7 +7,7 @@
 //
 
 #import "Story.h"
-
+#import "Comment.h"
 @implementation Story
 
 /*
@@ -77,7 +77,7 @@ EX:
     self.score = [[jsonDict objectForKey:@"score"] intValue];
     self.time = [[jsonDict objectForKey:@"time"] intValue];
     self.time = [[jsonDict objectForKey:@"descendants"] intValue];
-    self.kids = [jsonDict objectForKey:@"kids"];
+    self.kids = [jsonDict objectForKey:@"kids"];                        //make the array here
     if ([self.type  isEqualToString:@"job"] || [self.type isEqualToString:@"story"])
         {self.text = [jsonDict objectForKey:@"text"];}
 
@@ -97,7 +97,28 @@ EX:
 }
 
 
-
+/*
+-(NSArray *)arrayOfIDsToArrayOfComments:(NSArray*)array
+{
+    NSMutableArray *commentArray;
+    int i = 0;
+    Comment *comment;
+    while (i<[array count])
+    {
+        comment = [Comment newCommentWithID:[array[i] intValue]];
+        //NSLog([NSString stringWithFormat:@"%d",[array[i] intValue]]);
+        
+        [commentArray addObject:comment];
+        
+        Comment *check = (Comment *)commentArray[i];
+        i++;
+    }
+    
+    NSArray *final = [commentArray copy];
+    
+    return final;
+}
+*/
 @end
 
 

@@ -12,6 +12,7 @@
 @interface CommentViewController : UITableViewController
 
 @property (weak,nonatomic) Story *commentStory;
+@property (strong, nonatomic) NSMutableArray *heightArray;
 
 -(void)setupCommentStoryValue:(Story *)story;
 

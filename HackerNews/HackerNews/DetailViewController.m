@@ -15,7 +15,22 @@
     [self refreshUI];
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
+    self.webView.delegate = self;
+    
+    //self.middleLabel.text = @"No Story Selected";
+    //self.middleLabel.font = [UIFont systemFontOfSize:30];
     //self.webView.contentMode = UIViewContentModeScaleAspectFit;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.activity startAnimating];
+    self.activity.hidden = NO;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.activity stopAnimating];
+    self.activity.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +55,7 @@
         //NSLog(@"ref ONE");
 
         self.titleLabel.text = @"";
-        self.middleLabel.text = @"No Story Selected";
-        self.middleLabel.font = [UIFont systemFontOfSize:30];
+        
         //self.webView.alpha=0;
         return;
     }
@@ -57,6 +71,7 @@
             //NSLog([NSString stringWithFormat:@"%@",self.story.url]);
             //NSLog([NSString stringWithFormat:@"%@",self.story.text]);
             [self.webView loadHTMLString:self.story.text baseURL:nil];
+            
         }
         else
         {

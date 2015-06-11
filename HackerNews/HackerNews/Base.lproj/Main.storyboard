@@ -40,15 +40,22 @@
                             </label>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pN1-6g-Heb">
                                 <rect key="frame" x="-6" y="64" width="608" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pg8-UT-YSs">
+                                <rect key="frame" x="282" y="313" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="NDa-km-ivN" secondAttribute="centerY" constant="-51.5" id="7lN-Fh-5vL"/>
+                            <constraint firstItem="pN1-6g-Heb" firstAttribute="centerY" secondItem="pg8-UT-YSs" secondAttribute="centerY" constant="0.5" id="BbG-8p-mSW"/>
                             <constraint firstItem="pN1-6g-Heb" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-22" id="PvC-0F-SLV"/>
                             <constraint firstItem="pN1-6g-Heb" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" constant="18" id="YYh-eW-TIl"/>
                             <constraint firstAttribute="centerY" secondItem="pN1-6g-Heb" secondAttribute="centerY" constant="-32" id="bCe-W8-eYx"/>
                             <constraint firstAttribute="centerX" secondItem="pN1-6g-Heb" secondAttribute="centerX" constant="2" id="rgI-wS-B5l"/>
+                            <constraint firstItem="pN1-6g-Heb" firstAttribute="centerX" secondItem="pg8-UT-YSs" secondAttribute="centerX" constant="-2.5" id="vtC-1M-7vv"/>
                             <constraint firstItem="pN1-6g-Heb" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="zN4-xL-mMl"/>
                             <constraint firstAttribute="centerX" secondItem="NDa-km-ivN" secondAttribute="centerX" id="zqT-2w-nQG"/>
                         </constraints>
@@ -58,6 +65,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="fIE-Fw-Aj8"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activity" destination="pg8-UT-YSs" id="gZV-L4-nHE"/>
                         <outlet property="middleLabel" destination="NDa-km-ivN" id="wB2-Px-WTx"/>
                         <outlet property="webView" destination="pN1-6g-Heb" id="kIu-Nf-3GA"/>
                     </connections>
@@ -129,7 +137,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7w-k1-7fz">
-                                            <rect key="frame" x="40" y="80" width="34" height="20.5"/>
+                                            <rect key="frame" x="40" y="80" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.3541863952" green="0.3541863952" blue="0.3541863952" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -163,7 +171,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
-                                                <segue destination="JgP-l1-3VK" kind="showDetail" identifier="showComments" id="aPA-bL-ndg"/>
+                                                <segue destination="JgP-l1-3VK" kind="showDetail" identifier="showComments" id="PvD-na-o16"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -220,16 +228,39 @@
         <scene sceneID="yok-81-dPR">
             <objects>
                 <tableViewController id="Evx-Yq-4NB" customClass="CommentViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="afw-pk-efa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="217" sectionHeaderHeight="22" sectionFooterHeight="22" id="afw-pk-efa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="vPu-uA-LEW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="217" id="vPu-uA-LEW" customClass="CommentCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPu-uA-LEW" id="sQb-EK-WNO">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gv-99-puT">
+                                            <rect key="frame" x="20" y="10" width="558" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BR4-aW-2ld">
+                                            <rect key="frame" x="20" y="40" width="572" height="177"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </webView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BR4-aW-2ld" firstAttribute="trailing" secondItem="sQb-EK-WNO" secondAttribute="trailingMargin" id="CPM-zu-t3L"/>
+                                        <constraint firstItem="BR4-aW-2ld" firstAttribute="leading" secondItem="sQb-EK-WNO" secondAttribute="leadingMargin" constant="12" id="XXZ-41-ona"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BR4-aW-2ld" secondAttribute="bottom" constant="-8.5" id="kIg-aH-DhH"/>
+                                        <constraint firstItem="BR4-aW-2ld" firstAttribute="top" secondItem="sQb-EK-WNO" secondAttribute="topMargin" constant="32" id="u8h-dg-Fa1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="TitleLabel" destination="5gv-99-puT" id="RAT-6d-Tn9"/>
+                                    <outlet property="titleLabel" destination="5gv-99-puT" id="1uE-H1-czL"/>
+                                    <outlet property="webView" destination="BR4-aW-2ld" id="Vxy-Xu-RsD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

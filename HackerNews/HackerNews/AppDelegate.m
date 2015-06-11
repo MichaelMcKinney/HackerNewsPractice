@@ -49,7 +49,7 @@
     //master.delegate = detail;
     Story *first = [[master Stories] objectAtIndex:0];
     [detail setupStoryValue:first];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"reloadView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView:) name:@"reloadView" object:nil];
     return YES;
 }
 
