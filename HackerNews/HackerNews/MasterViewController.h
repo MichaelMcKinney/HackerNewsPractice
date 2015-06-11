@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "StoryCell.h"
-#import "delegateProtocol.h"
 
 @class DetailViewController;
 
@@ -18,8 +17,7 @@
 @property BOOL firstTimeLoading;
 
 @property NSMutableArray *Stories;
-
-@property (nonatomic, assign) id<delegateProtocol> delegate;
+@property (strong,nonatomic) Story *commentStory;
 
 
 

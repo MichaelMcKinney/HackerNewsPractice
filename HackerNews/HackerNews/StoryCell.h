@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *AuthorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *URLLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cellDeselected</key>
+	<string>#B6E4B6</string>
+	<key>cellSelected</key>
+	<string>#157015</string>
+	<key>cellTitle</key>
+	<string>#000000</string>
+	<key>cellSubtitle</key>
+	<string>#000000</string>
+	<key>commentButtonBG</key>
+	<string>#87CF87</string>
+	<key>commentButtonText</key>
+	<string>#1D4045</string>
+	<key>navBar</key>
+	<string>#157015</string>
+	<key>navText</key>
+	<string>#FFFFFF</string>
+	<key>navButton</key>
+	<string>#FFFFFF</string>
+	<key>refreshBG</key>
+	<string>#87CF87</string>
+	<key>refreshIcon</key>
+	<string>#157015</string>
+</dict>
+</plist>

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "StoryCell.h"
+#import "ThemeManager.h"
+#import "AppDelegate.h"
 
 @interface Story : NSObject
 

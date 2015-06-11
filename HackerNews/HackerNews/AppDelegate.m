@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "ThemeManager.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -16,10 +17,28 @@
 
 @implementation AppDelegate
 
++ (UIColor *)colorFromHexString:(NSString *)hexString
+{
+    
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDictionary *styles = [ThemeManager sharedManager].styles;
+    NSString *barColor = [styles objectForKey:@"navBar"];
+    NSString *buttonColor = [styles objectForKey:@"navText"];
+
+    [[UINavigationBar appearance] setBarTintColor:[AppDelegate colorFromHexString:barColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [AppDelegate colorFromHexString:buttonColor]}];
+    [[UINavigationBar appearance] setTintColor:[AppDelegate colorFromHexString:buttonColor]];
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *MnavigationController = [splitViewController.viewControllers objectAtIndex:0];
     UINavigationController *DnavigationController = [splitViewController.viewControllers objectAtIndex:1];
@@ -27,13 +46,16 @@
     MasterViewController *master = (MasterViewController *)[MnavigationController topViewController];
     DetailViewController *detail = (DetailViewController *)[DnavigationController topViewController];
     
-    master.delegate = detail;
-    //Story *first = [[master Stories] objectAtIndex:0];
-    //[detail setStory:first];
-    
-    
-    
+    //master.delegate = detail;
+    Story *first = [[master Stories] objectAtIndex:0];
+    [detail setupStoryValue:first];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"reloadView" object:nil];
     return YES;
+}
+
+-(void)reloadView
+{
+    NSLog(@"CAUGHT NOTIFICATION TO RELOAD");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -59,6 +81,15 @@
 }
 
 #pragma mark - Split view
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] story] == nil)) {
+        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 
 @end

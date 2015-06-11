@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "CommentViewController.h"
 
 
 @implementation MasterViewController
@@ -115,11 +116,15 @@
 -(void)viewDidLoad
 {
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor orangeColor];
-    self.refreshControl.tintColor = [UIColor whiteColor];
-    [self.refreshControl addTarget:self
-                            action:@selector(Refresh)
-                  forControlEvents:UIControlEventValueChanged];
+    
+    NSDictionary *styles = [ThemeManager sharedManager].styles;
+    NSString *refreshBG = [styles objectForKey:@"refreshBG"];
+    NSString *refreshIcon = [styles objectForKey:@"refreshIcon"];
+    
+    self.refreshControl.backgroundColor = [AppDelegate colorFromHexString:refreshBG];
+    self.refreshControl.tintColor = [AppDelegate colorFromHexString:refreshIcon];
+    [self.refreshControl addTarget:self action:@selector(Refresh) forControlEvents:UIControlEventValueChanged];
+   
     
 }
 -(void)loadData
@@ -135,7 +140,7 @@
     
     int i = 0;
     Story *A;
-    while(i<[idArray count]-270)//[InitialIDs count])
+    while(i<[idArray count]-470)//[InitialIDs count])
     {
         
         A = [Story newStoryWithID:[idArray[i] intValue]];
@@ -168,19 +173,44 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-    [cell FillLabelsFromStoryToSelf:((self.Stories)[indexPath.row])];
+    [cell FillLabelsFromStoryToSelf:self.Stories[indexPath.row]];
+    [cell.button addTarget:self action:@selector(pressedCommentsFrom:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+-(void)pressedCommentsFrom:(id)sender
 {
-    //NSLog(@"selected Row");
-    Story *selected = [self.Stories objectAtIndex:indexPath.row];
-    if(self.delegate)
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    Story *object = self.Stories[indexPath.row];
+    self.commentStory = object;
+    [self performSegueWithIdentifier:@"showComments" sender:sender];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"])
     {
-        [self.delegate selectedStory:selected];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Story *object = self.Stories[indexPath.row];
+        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        [controller setupStoryValue:object];
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
-    //[self performSegueWithIdentifier:@"showDetail" sender:self];
-    
+    else if ([[segue identifier] isEqualToString:@"showComments"])
+    {
+        CommentViewController *controller = (CommentViewController *)[[segue destinationViewController] topViewController];
+        [controller setupCommentStoryValue:self.commentStory];
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    }
 }
 
 @end
+
+
+
+
+
+

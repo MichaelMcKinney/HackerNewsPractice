@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "StoryCell.h"
-#import "delegateProtocol.h"
 
-@interface DetailViewController : UIViewController <delegateProtocol>
+@interface DetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

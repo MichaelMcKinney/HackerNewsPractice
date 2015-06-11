@@ -1,4 +1,4 @@
-//
+//  WORKING COPY
 //  AppDelegate.h
 //  HackerNews
 //
@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
++ (UIColor *)colorFromHexString:(NSString *)hexString;
 
 @property (strong, nonatomic) UIWindow *window;
 

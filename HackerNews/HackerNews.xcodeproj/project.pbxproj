@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279200FC1B289B810054269A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279200FB1B289B810054269A /* CommentViewController.m */; };
+		279200FF1B28ABF70054269A /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 279200FE1B28ABF70054269A /* ThemeManager.m */; };
+		279201061B28ADB00054269A /* redTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279201051B28ADB00054269A /* redTheme.plist */; };
+		279201081B28C1BA0054269A /* greenTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279201071B28C1BA0054269A /* greenTheme.plist */; };
+		2792010B1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */; };
 		27BA553C1B25CDA100728F2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA553B1B25CDA100728F2A /* main.m */; };
 		27BA553F1B25CDA100728F2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA553E1B25CDA100728F2A /* AppDelegate.m */; };
 		27BA55421B25CDA100728F2A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55411B25CDA100728F2A /* MasterViewController.m */; };
@@ -17,7 +22,6 @@
 		27BA55591B25CDA100728F2A /* HackerNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55581B25CDA100728F2A /* HackerNewsTests.m */; };
 		27BA55641B25D05000728F2A /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55631B25D05000728F2A /* StoryCell.m */; };
 		27BA556A1B25ED1000728F2A /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55691B25ED1000728F2A /* Story.m */; };
-		27BA556F1B274B6800728F2A /* delegateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA556E1B274B6800728F2A /* delegateProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279200FA1B289B810054269A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		279200FB1B289B810054269A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		279200FD1B28ABF70054269A /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		279200FE1B28ABF70054269A /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		279201051B28ADB00054269A /* redTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = redTheme.plist; sourceTree = "<group>"; };
+		279201071B28C1BA0054269A /* greenTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greenTheme.plist; sourceTree = "<group>"; };
+		279201091B28C5F70054269A /* ColorChoiceViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChoiceViewControllerTableViewController.h; sourceTree = "<group>"; };
+		2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChoiceViewControllerTableViewController.m; sourceTree = "<group>"; };
 		27BA55361B25CDA100728F2A /* HackerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BA553A1B25CDA100728F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BA553B1B25CDA100728F2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,8 +62,6 @@
 		27BA55631B25D05000728F2A /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		27BA55681B25ED1000728F2A /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		27BA55691B25ED1000728F2A /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
-		27BA556B1B274A8600728F2A /* delegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = delegateProtocol.h; sourceTree = "<group>"; };
-		27BA556E1B274B6800728F2A /* delegateProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = delegateProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279201001B28AD350054269A /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				279201051B28ADB00054269A /* redTheme.plist */,
+				279201071B28C1BA0054269A /* greenTheme.plist */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		27BA552D1B25CDA100728F2A = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +116,20 @@
 				27BA553E1B25CDA100728F2A /* AppDelegate.m */,
 				27BA55401B25CDA100728F2A /* MasterViewController.h */,
 				27BA55411B25CDA100728F2A /* MasterViewController.m */,
-				27BA556B1B274A8600728F2A /* delegateProtocol.h */,
-				27BA556E1B274B6800728F2A /* delegateProtocol.m */,
 				27BA55431B25CDA100728F2A /* DetailViewController.h */,
 				27BA55441B25CDA100728F2A /* DetailViewController.m */,
+				279200FA1B289B810054269A /* CommentViewController.h */,
+				279200FB1B289B810054269A /* CommentViewController.m */,
+				279201091B28C5F70054269A /* ColorChoiceViewControllerTableViewController.h */,
+				2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */,
 				27BA55621B25D05000728F2A /* StoryCell.h */,
 				27BA55631B25D05000728F2A /* StoryCell.m */,
 				27BA55681B25ED1000728F2A /* Story.h */,
 				27BA55691B25ED1000728F2A /* Story.m */,
 				27BA55461B25CDA100728F2A /* Main.storyboard */,
+				279200FD1B28ABF70054269A /* ThemeManager.h */,
+				279200FE1B28ABF70054269A /* ThemeManager.m */,
+				279201001B28AD350054269A /* Themes */,
 				27BA55491B25CDA100728F2A /* Images.xcassets */,
 				27BA554B1B25CDA100728F2A /* LaunchScreen.xib */,
 				27BA55391B25CDA100728F2A /* Supporting Files */,
@@ -219,8 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279201081B28C1BA0054269A /* greenTheme.plist in Resources */,
 				27BA55481B25CDA100728F2A /* Main.storyboard in Resources */,
 				27BA554D1B25CDA100728F2A /* LaunchScreen.xib in Resources */,
+				279201061B28ADB00054269A /* redTheme.plist in Resources */,
 				27BA554A1B25CDA100728F2A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,11 +267,13 @@
 			files = (
 				27BA553F1B25CDA100728F2A /* AppDelegate.m in Sources */,
 				27BA55641B25D05000728F2A /* StoryCell.m in Sources */,
+				279200FC1B289B810054269A /* CommentViewController.m in Sources */,
 				27BA55421B25CDA100728F2A /* MasterViewController.m in Sources */,
-				27BA556F1B274B6800728F2A /* delegateProtocol.m in Sources */,
 				27BA556A1B25ED1000728F2A /* Story.m in Sources */,
 				27BA553C1B25CDA100728F2A /* main.m in Sources */,
 				27BA55451B25CDA100728F2A /* DetailViewController.m in Sources */,
+				279200FF1B28ABF70054269A /* ThemeManager.m in Sources */,
+				2792010B1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +470,7 @@
 				27BA555E1B25CDA100728F2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27BA555F1B25CDA100728F2A /* Build configuration list for PBXNativeTarget "HackerNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +479,7 @@
 				27BA55611B25CDA100728F2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
