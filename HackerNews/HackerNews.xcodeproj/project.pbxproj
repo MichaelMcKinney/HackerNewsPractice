@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279165E21B2B64C60050901B /* Bullish-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 279165E01B2B64C60050901B /* Bullish-24.png */; };
+		279165E31B2B64C60050901B /* Clock-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 279165E11B2B64C60050901B /* Clock-24.png */; };
 		279200FC1B289B810054269A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279200FB1B289B810054269A /* CommentViewController.m */; };
 		279200FF1B28ABF70054269A /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 279200FE1B28ABF70054269A /* ThemeManager.m */; };
 		279201061B28ADB00054269A /* redTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279201051B28ADB00054269A /* redTheme.plist */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279165E01B2B64C60050901B /* Bullish-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bullish-24.png"; sourceTree = "<group>"; };
+		279165E11B2B64C60050901B /* Clock-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clock-24.png"; sourceTree = "<group>"; };
 		279200FA1B289B810054269A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		279200FB1B289B810054269A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		279200FD1B28ABF70054269A /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279165E41B2B76610050901B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				279165E01B2B64C60050901B /* Bullish-24.png */,
+				279165E11B2B64C60050901B /* Clock-24.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		279201001B28AD350054269A /* Themes */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 				27BA55631B25D05000728F2A /* StoryCell.m */,
 				27BA55681B25ED1000728F2A /* Story.h */,
 				27BA55691B25ED1000728F2A /* Story.m */,
+				279165E41B2B76610050901B /* images */,
 				279201121B2A034C0054269A /* Color Choice */,
 				27BA55461B25CDA100728F2A /* Main.storyboard */,
 				27BA55491B25CDA100728F2A /* Images.xcassets */,
@@ -230,6 +244,7 @@
 				TargetAttributes = {
 					27BA55351B25CDA100728F2A = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = FX46JB7V65;
 					};
 					27BA55511B25CDA100728F2A = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -264,7 +279,9 @@
 				279201081B28C1BA0054269A /* greenTheme.plist in Resources */,
 				27BA55481B25CDA100728F2A /* Main.storyboard in Resources */,
 				27BA554D1B25CDA100728F2A /* LaunchScreen.xib in Resources */,
+				279165E21B2B64C60050901B /* Bullish-24.png in Resources */,
 				279201061B28ADB00054269A /* redTheme.plist in Resources */,
+				279165E31B2B64C60050901B /* Clock-24.png in Resources */,
 				27BA554A1B25CDA100728F2A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,9 +438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackerNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -431,9 +451,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackerNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

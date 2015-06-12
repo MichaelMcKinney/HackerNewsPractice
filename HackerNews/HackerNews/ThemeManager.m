@@ -11,7 +11,7 @@
 @implementation ThemeManager
 
 
--(id)init
+-(id)init //generously donated by stack overflow
 {
     if ((self=[super init]))
     {
@@ -24,7 +24,7 @@
     return self;
 }
 
-+ (ThemeManager *)sharedManager
++ (ThemeManager *)sharedManager //Stack Overflow
 {
     static ThemeManager *sharedManager = nil;
     if (sharedManager == nil)
@@ -33,8 +33,5 @@
     }
     return sharedManager;
 }
-
-
-
 
 @end

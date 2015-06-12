@@ -9,7 +9,8 @@
 #import "DetailViewController.h"
 
 @implementation DetailViewController
-- (void)viewDidLoad {
+- (void)viewDidLoad //initializes the webview and
+{
     
     //NSLog(@"DetailViewDidLoad");
     [self refreshUI];
@@ -21,13 +22,13 @@
     //self.middleLabel.font = [UIFont systemFontOfSize:30];
     //self.webView.contentMode = UIViewContentModeScaleAspectFit;
 }
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(UIWebView *)webView //starts animating the spinner
 {
     [self.activity startAnimating];
     self.activity.hidden = NO;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webViewDidFinishLoad:(UIWebView *)webView //stops animating the spinner
 {
     [self.activity stopAnimating];
     self.activity.hidden = YES;
@@ -40,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setupStoryValue:(Story *)story
+-(void)setupStoryValue:(Story *)story //initialize the story to display
 {
     //NSLog(@"settingStory");
     if (self.story != story)

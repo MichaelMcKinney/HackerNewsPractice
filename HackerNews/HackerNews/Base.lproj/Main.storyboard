@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-km-ivN">
-                                <rect key="frame" x="279" y="341" width="42" height="20.5"/>
+                                <rect key="frame" x="279" y="341" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7w-k1-7fz">
-                                            <rect key="frame" x="40" y="80" width="34" height="20.5"/>
+                                            <rect key="frame" x="40" y="80" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.3541863952" green="0.3541863952" blue="0.3541863952" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -218,7 +218,36 @@
                                 </segue>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bm1-lw-aIJ">
+                            <view key="customView" contentMode="scaleToFill" id="jsz-SB-n40">
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <toolbar autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6L8-Kh-Gzm">
+                                        <rect key="frame" x="0.0" y="-5" width="133" height="44"/>
+                                        <items>
+                                            <barButtonItem image="Bullish-24.png" id="X9B-BC-w8R">
+                                                <connections>
+                                                    <action selector="sortCellsByScore:" destination="7bK-jq-Zjz" id="sHa-kl-G4A"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="Clock-24.png" id="nCl-1F-KNi">
+                                                <connections>
+                                                    <action selector="sortCellsByTime:" destination="7bK-jq-Zjz" id="PPF-w0-AFb"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="Tm2-Ge-4Dh"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scoreButton" destination="X9B-BC-w8R" id="Ov7-Pb-TZf"/>
+                        <outlet property="timeButton" destination="nCl-1F-KNi" id="NjV-5i-Eym"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,7 +274,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BR4-aW-2ld">
-                                            <rect key="frame" x="8" y="29" width="584" height="251.5"/>
+                                            <rect key="frame" x="8" y="29" width="584" height="252"/>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </webView>
                                     </subviews>
@@ -306,6 +335,10 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bullish-24.png" width="24" height="24"/>
+        <image name="Clock-24.png" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7WW-BG-vnK"/>
     </inferredMetricsTieBreakers>

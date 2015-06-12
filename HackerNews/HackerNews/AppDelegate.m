@@ -17,7 +17,7 @@
 
 @implementation AppDelegate
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString
++ (UIColor *)colorFromHexString:(NSString *)hexString //from a generous stackoverflow user - converts hex strings to UIColors
 {
     
     unsigned rgbValue = 0;
@@ -30,26 +30,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    NSDictionary *styles = [ThemeManager sharedManager].styles;
-    NSString *barColor = [styles objectForKey:@"navBar"];
-    NSString *buttonColor = [styles objectForKey:@"navText"];
+    NSDictionary *styles = [ThemeManager sharedManager].styles; //access the plist file that's selected
+    NSString *barColor = [styles objectForKey:@"navBar"];        //set the bar color to plist's navBar code
+    NSString *buttonColor = [styles objectForKey:@"navText"];   //set navbar buttons color to the plists navtext
 
     [[UINavigationBar appearance] setBarTintColor:[AppDelegate colorFromHexString:barColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [AppDelegate colorFromHexString:buttonColor]}];
-    [[UINavigationBar appearance] setTintColor:[AppDelegate colorFromHexString:buttonColor]];
+    [[UINavigationBar appearance] setTintColor:[AppDelegate colorFromHexString:buttonColor]];               //set up the navbar's color
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *MnavigationController = [splitViewController.viewControllers objectAtIndex:0];
-    UINavigationController *DnavigationController = [splitViewController.viewControllers objectAtIndex:1];
+    UINavigationController *DnavigationController = [splitViewController.viewControllers objectAtIndex:1];          //get ahold of both of hte detail and master view controllers for setting delegates/properties
     
     MasterViewController *master = (MasterViewController *)[MnavigationController topViewController];
     DetailViewController *detail = (DetailViewController *)[DnavigationController topViewController];
     
     //master.delegate = detail;
-    Story *first = [[master Stories] objectAtIndex:0];
+    Story *first = [[master Stories] objectAtIndex:0];      //assign initial story
     [detail setupStoryValue:first];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView:) name:@"reloadView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView:) name:@"reloadView" object:nil]; //catch the reload screen notification to run some sort of
     return YES;
 }
 

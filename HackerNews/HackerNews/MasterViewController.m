@@ -13,7 +13,7 @@
 
 @implementation MasterViewController
 
--(id)initWithCoder:(NSCoder *)aDecoder
+-(id)initWithCoder:(NSCoder *)aDecoder //initializes the array for the stories and loads data indirectly
 {
     if (self = [super initWithCoder:aDecoder])
     {
@@ -113,8 +113,21 @@
     return [self.Stories count];
 }
 
--(void)viewDidLoad
+-(void)viewDidLoad //make buttons, assign colors, make refresh icon at scroll down
 {
+    /*
+    self.timeButton.image = [UIImage imageNamed:@"Clock-24.png"];
+    self.scoreButton.image = [UIImage imageNamed:@"Bullish-24.png"];
+    self.timeButton.action = @selector(sortCellsByTime:);
+    self.scoreButton.action = @selector(sortCellsByScore:);
+    self.timeButton.target = self;
+    self.scoreButton.target = self;
+     */
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.timeButton,self.scoreButton, nil];
+    
+    self.navigationController.toolbarHidden = YES;
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     
     NSDictionary *styles = [ThemeManager sharedManager].styles;
@@ -127,7 +140,7 @@
    
     
 }
--(void)loadData
+-(void)loadData //pull top stories from json, create the story objects
 {
     NSURL *U = [NSURL URLWithString:@"https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"];
     NSData *data = [NSData dataWithContentsOfURL:U];
@@ -163,14 +176,25 @@
     }
     self.firstTimeLoading = NO;
 }
--(void)Refresh
+
+-(IBAction)sortCellsByTime:(id)sender //is called by time button, does what it says
+{
+    [self.Stories sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]]];
+    [self.tableView reloadData];
+}
+-(IBAction)sortCellsByScore:(id)sender //is called by chart button, does what it says
+{
+    [self.Stories sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO]]];
+    [self.tableView reloadData];
+}
+-(void)Refresh //stops refresh icon from spinning and reloads all data from json
 {
     //NSLog(@"Did Refresh");
     [self.refreshControl endRefreshing];
     [self loadData];
 }
           
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //assign cells from array of stories
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
     [cell FillLabelsFromStoryToSelf:self.Stories[indexPath.row]];
@@ -178,7 +202,7 @@
     return cell;
 }
 
--(void)pressedCommentsFrom:(id)sender
+-(void)pressedCommentsFrom:(id)sender //locates which comments button was pressed and performs a segue
 {
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
@@ -186,7 +210,7 @@
     self.commentStory = object;
     [self performSegueWithIdentifier:@"showComments" sender:sender];
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //sends proper info to the arrival scene
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {

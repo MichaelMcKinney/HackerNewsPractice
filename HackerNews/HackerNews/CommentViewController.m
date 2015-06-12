@@ -23,7 +23,12 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.commentStory.kids count];
+    if ([self.commentStory.kids count]!=0)
+    {
+        return [self.commentStory.kids count];
+    }
+    else
+        return 1;
 }
 
   
@@ -31,15 +36,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-    Comment *comment = Comment.new;
-    comment = [Comment newCommentWithID:[self.commentStory.kids[indexPath.row] intValue]];
-    [cell FillLabelsFromCommentToSelf:comment];
-    
-    //NSNumber *greg = [NSNumber numberWithFloat:cell.contentHeight];
-    //NSLog([NSString stringWithFormat:@"%@",greg]);
-    //[self.heightArray insertObject:greg atIndex:indexPath.row];
-    
-    return cell;
+    if ([self.commentStory.kids count]!=0)
+    {
+        Comment *comment = Comment.new;
+        comment = [Comment newCommentWithID:[self.commentStory.kids[indexPath.row] intValue]];
+        [cell FillLabelsFromCommentToSelf:comment];
+        
+        //NSNumber *greg = [NSNumber numberWithFloat:cell.contentHeight];
+        //NSLog([NSString stringWithFormat:@"%@",greg]);
+        //[self.heightArray insertObject:greg atIndex:indexPath.row];
+        
+        return cell;
+    }
+    else
+    {
+        cell.TitleLabel.text = @"";
+        cell.textLabel.text = @"There have been no comments yet...";
+        
+        return cell;
+    }
+        
 }
 /*
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
