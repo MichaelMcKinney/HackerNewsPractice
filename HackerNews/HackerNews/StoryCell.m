@@ -35,6 +35,7 @@
     
     
 #pragma mark - COLORS
+    
     /*
      NSDictionary *styles = [ThemeManager sharedManager].styles;
      NSString *labelColor = [styles objectForKey:@"myLabelColor"];

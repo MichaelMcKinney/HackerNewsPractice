@@ -12,14 +12,19 @@
 
 
 @implementation MasterViewController
-
+-(void)awakeFromNib
+{
+    NSLog(@"awaking");
+}
 -(id)initWithCoder:(NSCoder *)aDecoder //initializes the array for the stories and loads data indirectly
 {
+     NSLog(@"init");
     if (self = [super initWithCoder:aDecoder])
     {
         self.Stories = [NSMutableArray array];
         self.firstTimeLoading = YES;
         [self loadData];
+        
         /* THE WORST WAY TO DO THIS
         
          

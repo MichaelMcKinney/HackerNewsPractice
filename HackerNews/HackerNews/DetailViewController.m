@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 
 @implementation DetailViewController
-- (void)viewDidLoad //initializes the webview and
+- (void)viewDidLoad //initializes the webview
 {
     
     //NSLog(@"DetailViewDidLoad");
@@ -49,7 +49,7 @@
     [self refreshUI];
 }
 
--(void)refreshUI
+-(void)refreshUI//load in the url from the story to the UIwebview
 {
     if (self.story.ID==0)
     {
@@ -83,10 +83,10 @@
         
         return;
     }
-    
+     
 }
 
--(void)selectedStory:(Story *)story
+-(void)selectedStory:(Story *)story //assign story value
 {
     [self setupStoryValue:story];
 }
