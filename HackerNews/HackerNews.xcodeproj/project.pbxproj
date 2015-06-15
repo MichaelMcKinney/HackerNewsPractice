@@ -45,8 +45,8 @@
 		279200FB1B289B810054269A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		279200FD1B28ABF70054269A /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		279200FE1B28ABF70054269A /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
-		279201051B28ADB00054269A /* redTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = redTheme.plist; sourceTree = "<group>"; };
-		279201071B28C1BA0054269A /* greenTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greenTheme.plist; sourceTree = "<group>"; };
+		279201051B28ADB00054269A /* redTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = redTheme.plist; path = Themes/redTheme.plist; sourceTree = "<group>"; };
+		279201071B28C1BA0054269A /* greenTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = greenTheme.plist; path = Themes/greenTheme.plist; sourceTree = "<group>"; };
 		279201091B28C5F70054269A /* ColorChoiceViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChoiceViewControllerTableViewController.h; sourceTree = "<group>"; };
 		2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChoiceViewControllerTableViewController.m; sourceTree = "<group>"; };
 		2792010C1B29F99E0054269A /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
@@ -92,36 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		279165E41B2B76610050901B /* images */ = {
-			isa = PBXGroup;
-			children = (
-				279165E01B2B64C60050901B /* Bullish-24.png */,
-				279165E11B2B64C60050901B /* Clock-24.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
-		279201001B28AD350054269A /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				279201051B28ADB00054269A /* redTheme.plist */,
-				279201071B28C1BA0054269A /* greenTheme.plist */,
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
-		279201121B2A034C0054269A /* Color Choice */ = {
-			isa = PBXGroup;
-			children = (
-				279200FD1B28ABF70054269A /* ThemeManager.h */,
-				279200FE1B28ABF70054269A /* ThemeManager.m */,
-				279201091B28C5F70054269A /* ColorChoiceViewControllerTableViewController.h */,
-				2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */,
-				279201001B28AD350054269A /* Themes */,
-			);
-			name = "Color Choice";
-			sourceTree = "<group>";
-		};
 		27BA552D1B25CDA100728F2A = {
 			isa = PBXGroup;
 			children = (
@@ -145,23 +115,9 @@
 			children = (
 				27BA553D1B25CDA100728F2A /* AppDelegate.h */,
 				27BA553E1B25CDA100728F2A /* AppDelegate.m */,
-				27BA55401B25CDA100728F2A /* MasterViewController.h */,
-				27BA55411B25CDA100728F2A /* MasterViewController.m */,
-				27BA55431B25CDA100728F2A /* DetailViewController.h */,
-				27BA55441B25CDA100728F2A /* DetailViewController.m */,
-				279200FA1B289B810054269A /* CommentViewController.h */,
-				279200FB1B289B810054269A /* CommentViewController.m */,
-				2792010C1B29F99E0054269A /* CommentCell.h */,
-				2792010D1B29F99E0054269A /* CommentCell.m */,
-				2792010F1B29F9C00054269A /* Comment.h */,
-				279201101B29F9C00054269A /* Comment.m */,
-				27BA55621B25D05000728F2A /* StoryCell.h */,
-				27BA55631B25D05000728F2A /* StoryCell.m */,
-				27BA55681B25ED1000728F2A /* Story.h */,
-				27BA55691B25ED1000728F2A /* Story.m */,
-				279165E41B2B76610050901B /* images */,
-				279201121B2A034C0054269A /* Color Choice */,
-				27BA55461B25CDA100728F2A /* Main.storyboard */,
+				27D3F81A1B2F46AB00E36800 /* Scenes */,
+				27D3F8181B2F460D00E36800 /* Models */,
+				27D3F8191B2F461800E36800 /* StoryBoards */,
 				27BA55491B25CDA100728F2A /* Images.xcassets */,
 				27BA554B1B25CDA100728F2A /* LaunchScreen.xib */,
 				27BA55391B25CDA100728F2A /* Supporting Files */,
@@ -172,6 +128,10 @@
 		27BA55391B25CDA100728F2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				279165E01B2B64C60050901B /* Bullish-24.png */,
+				279165E11B2B64C60050901B /* Clock-24.png */,
+				279201051B28ADB00054269A /* redTheme.plist */,
+				279201071B28C1BA0054269A /* greenTheme.plist */,
 				27BA553A1B25CDA100728F2A /* Info.plist */,
 				27BA553B1B25CDA100728F2A /* main.m */,
 			);
@@ -193,6 +153,70 @@
 				27BA55571B25CDA100728F2A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D3F8181B2F460D00E36800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2792010F1B29F9C00054269A /* Comment.h */,
+				279201101B29F9C00054269A /* Comment.m */,
+				27BA55681B25ED1000728F2A /* Story.h */,
+				27BA55691B25ED1000728F2A /* Story.m */,
+				279200FD1B28ABF70054269A /* ThemeManager.h */,
+				279200FE1B28ABF70054269A /* ThemeManager.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		27D3F8191B2F461800E36800 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				27BA55461B25CDA100728F2A /* Main.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		27D3F81A1B2F46AB00E36800 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				27D3F81D1B2F474800E36800 /* View Models */,
+				27D3F81B1B2F472300E36800 /* View Controllers */,
+				27D3F81C1B2F473400E36800 /* Views */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		27D3F81B1B2F472300E36800 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27BA55401B25CDA100728F2A /* MasterViewController.h */,
+				27BA55411B25CDA100728F2A /* MasterViewController.m */,
+				27BA55431B25CDA100728F2A /* DetailViewController.h */,
+				27BA55441B25CDA100728F2A /* DetailViewController.m */,
+				279200FA1B289B810054269A /* CommentViewController.h */,
+				279200FB1B289B810054269A /* CommentViewController.m */,
+				279201091B28C5F70054269A /* ColorChoiceViewControllerTableViewController.h */,
+				2792010A1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		27D3F81C1B2F473400E36800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2792010C1B29F99E0054269A /* CommentCell.h */,
+				2792010D1B29F99E0054269A /* CommentCell.m */,
+				27BA55621B25D05000728F2A /* StoryCell.h */,
+				27BA55631B25D05000728F2A /* StoryCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		27D3F81D1B2F474800E36800 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
