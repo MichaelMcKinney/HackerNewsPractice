@@ -27,7 +27,6 @@
     self.URLLabel.text = story.url.host;
     self.TitleLabel.adjustsFontSizeToFitWidth = NO;
     self.TitleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    //[self.CommentsButton setTitle:[NSString stringWithFormat:@"%lu",[story.kids count]] forState:UIControlStateNormal];
    
     [self.button setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)[story.kids count]] forState:UIControlStateNormal];
     self.button.titleLabel.font = [UIFont systemFontOfSize:18.0];
@@ -37,11 +36,7 @@
     
 #pragma mark - COLORS
     
-    /*
-     NSDictionary *styles = [ThemeManager sharedManager].styles;
-     NSString *labelColor = [styles objectForKey:@"myLabelColor"];
-     someLabel.color = [UIColor colorWithHexString:labelColor];
-    */
+
     NSDictionary *styles = [ThemeManager sharedManager].styles;
     
     NSString *titleColor = [styles objectForKey:@"cellTitle"];

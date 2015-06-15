@@ -12,7 +12,6 @@
 
 + (UIColor *)colorFromHexString:(NSString *)hexString //from a generous stackoverflow user - converts hex strings to UIColors
 {
-    
     unsigned rgbValue = 0;
     NSScanner *scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:1]; // bypass '#' character

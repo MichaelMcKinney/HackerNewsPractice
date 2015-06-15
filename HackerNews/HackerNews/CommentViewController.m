@@ -8,6 +8,7 @@
 
 #import "CommentViewController.h"
 #import "CommentCell.h"
+#import "HackerNewsAPI.h"
 
 @implementation CommentViewController
 
@@ -39,7 +40,7 @@
     if ([self.commentStory.kids count]!=0)
     {
         Comment *comment = Comment.new;
-        comment = [Comment newCommentWithID:[self.commentStory.kids[indexPath.row] intValue]];
+        comment = [HackerNewsAPI getCommentFromID:[self.commentStory.kids[indexPath.row] intValue]]; //use hacker news call
         [cell FillLabelsFromCommentToSelf:comment];
         
         //NSNumber *greg = [NSNumber numberWithFloat:cell.contentHeight];

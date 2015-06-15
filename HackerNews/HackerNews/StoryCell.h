@@ -17,9 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
-
-
-
 -(void)FillLabelsFromStoryToSelf:(Story *)story;
 
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Story.h"
+#import "Comment.h"
 
 @interface HackerNewsAPI : NSObject
+
++(NSMutableArray *)getTopStories:(int)numberOfStories;
++(Story *)getStoryFromID:(int)ID;
++(Comment *)getCommentFromID:(int)ID;
 
 @end
