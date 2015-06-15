@@ -8,7 +8,7 @@
 
 #import "ColorChoiceViewControllerTableViewController.h"
 #import "ThemeManager.h"
-#import "AppDelegate.h"
+#import "ColorUtil.h"
 
 @interface ColorChoiceViewControllerTableViewController ()
 
@@ -52,11 +52,11 @@
     
     if (indexPath.row == 0)
     {
-        cell.backgroundColor = [AppDelegate colorFromHexString:@"#5C949C"];
+        cell.backgroundColor = [ColorUtil colorFromHexString:@"#5C949C"];
     }
     else
     {
-        cell.backgroundColor = [AppDelegate colorFromHexString:@"#157015"];
+        cell.backgroundColor = [ColorUtil colorFromHexString:@"#157015"];
     }
     return cell;
 }

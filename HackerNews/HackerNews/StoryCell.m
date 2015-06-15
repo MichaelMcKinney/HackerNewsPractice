@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
+#import "ColorUtil.h"
 #import "StoryCell.h"
 
 @implementation StoryCell
@@ -52,18 +53,18 @@
 
     
     UIView *bgColorView = [[UIView alloc]init];
-    bgColorView.backgroundColor = [AppDelegate colorFromHexString:BGSelectedColor];
+    bgColorView.backgroundColor = [ColorUtil colorFromHexString:BGSelectedColor];
     [self setSelectedBackgroundView:bgColorView];
     
-    self.backgroundColor = [AppDelegate colorFromHexString:BGColor];
+    self.backgroundColor = [ColorUtil colorFromHexString:BGColor];
     
-    self.TitleLabel.textColor = [AppDelegate colorFromHexString:titleColor];
-    self.URLLabel.textColor = [AppDelegate colorFromHexString:subColor];
+    self.TitleLabel.textColor = [ColorUtil colorFromHexString:titleColor];
+    self.URLLabel.textColor = [ColorUtil colorFromHexString:subColor];
     self.ScoreLabel.textColor = self.URLLabel.textColor;
     self.AuthorLabel.textColor = self.URLLabel.textColor;
     
-    [self.button setTitleColor:[AppDelegate colorFromHexString:buttonTextColor] forState:UIControlStateNormal];
-    [self.button setBackgroundColor:[AppDelegate colorFromHexString:buttonColor]];
+    [self.button setTitleColor:[ColorUtil colorFromHexString:buttonTextColor] forState:UIControlStateNormal];
+    [self.button setBackgroundColor:[ColorUtil colorFromHexString:buttonColor]];
 }
 
 

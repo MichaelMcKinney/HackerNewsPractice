@@ -26,6 +26,8 @@
 		27BA55591B25CDA100728F2A /* HackerNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55581B25CDA100728F2A /* HackerNewsTests.m */; };
 		27BA55641B25D05000728F2A /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55631B25D05000728F2A /* StoryCell.m */; };
 		27BA556A1B25ED1000728F2A /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55691B25ED1000728F2A /* Story.m */; };
+		27D3F8211B2F497400E36800 /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8201B2F497400E36800 /* ColorUtil.m */; };
+		27D3F8251B2F4A5A00E36800 /* HackerNewsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		27BA55631B25D05000728F2A /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		27BA55681B25ED1000728F2A /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		27BA55691B25ED1000728F2A /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		27D3F81F1B2F497400E36800 /* ColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
+		27D3F8201B2F497400E36800 /* ColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
+		27D3F8231B2F4A5A00E36800 /* HackerNewsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackerNewsAPI.h; sourceTree = "<group>"; };
+		27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackerNewsAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 			children = (
 				27BA553D1B25CDA100728F2A /* AppDelegate.h */,
 				27BA553E1B25CDA100728F2A /* AppDelegate.m */,
+				27D3F8221B2F4A3E00E36800 /* API */,
+				27D3F81E1B2F483600E36800 /* Helpers */,
 				27D3F81A1B2F46AB00E36800 /* Scenes */,
 				27D3F8181B2F460D00E36800 /* Models */,
 				27D3F8191B2F461800E36800 /* StoryBoards */,
@@ -162,8 +170,6 @@
 				279201101B29F9C00054269A /* Comment.m */,
 				27BA55681B25ED1000728F2A /* Story.h */,
 				27BA55691B25ED1000728F2A /* Story.m */,
-				279200FD1B28ABF70054269A /* ThemeManager.h */,
-				279200FE1B28ABF70054269A /* ThemeManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,6 +223,26 @@
 			children = (
 			);
 			name = "View Models";
+			sourceTree = "<group>";
+		};
+		27D3F81E1B2F483600E36800 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				279200FD1B28ABF70054269A /* ThemeManager.h */,
+				279200FE1B28ABF70054269A /* ThemeManager.m */,
+				27D3F81F1B2F497400E36800 /* ColorUtil.h */,
+				27D3F8201B2F497400E36800 /* ColorUtil.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		27D3F8221B2F4A3E00E36800 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				27D3F8231B2F4A5A00E36800 /* HackerNewsAPI.h */,
+				27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BA553F1B25CDA100728F2A /* AppDelegate.m in Sources */,
+				27D3F8251B2F4A5A00E36800 /* HackerNewsAPI.m in Sources */,
 				27BA55641B25D05000728F2A /* StoryCell.m in Sources */,
 				279200FC1B289B810054269A /* CommentViewController.m in Sources */,
 				279201111B29F9C00054269A /* Comment.m in Sources */,
@@ -335,6 +362,7 @@
 				2792010E1B29F99E0054269A /* CommentCell.m in Sources */,
 				279200FF1B28ABF70054269A /* ThemeManager.m in Sources */,
 				2792010B1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m in Sources */,
+				27D3F8211B2F497400E36800 /* ColorUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

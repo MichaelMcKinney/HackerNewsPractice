@@ -10,8 +10,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString; //makes colors from the plist file for color preferences
-
 @property (strong, nonatomic) UIWindow *window;
 
 

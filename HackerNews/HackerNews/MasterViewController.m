@@ -9,7 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "CommentViewController.h"
-
+#import "ColorUtil.h"
 
 @implementation MasterViewController
 -(void)awakeFromNib
@@ -139,8 +139,8 @@
     NSString *refreshBG = [styles objectForKey:@"refreshBG"];
     NSString *refreshIcon = [styles objectForKey:@"refreshIcon"];
     
-    self.refreshControl.backgroundColor = [AppDelegate colorFromHexString:refreshBG];
-    self.refreshControl.tintColor = [AppDelegate colorFromHexString:refreshIcon];
+    self.refreshControl.backgroundColor = [ColorUtil colorFromHexString:refreshBG];
+    self.refreshControl.tintColor = [ColorUtil colorFromHexString:refreshIcon];
     [self.refreshControl addTarget:self action:@selector(Refresh) forControlEvents:UIControlEventValueChanged];
    
     
