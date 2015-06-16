@@ -28,7 +28,7 @@
 -(void)sortCellsByScore;
 -(void)loadData;
 -(void)ButtonPosition;
-
+-(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath;
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView;
 
 

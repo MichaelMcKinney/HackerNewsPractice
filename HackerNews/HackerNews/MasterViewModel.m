@@ -37,6 +37,12 @@
 {
     self.Stories = [HackerNewsAPI getTopStories:self.count];
 }
+
+-(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath;
+{
+    [cell FillLabelsFromStoryToSelf:_Stories[indexPath.row]];
+}
+
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView
 {
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:tableView];

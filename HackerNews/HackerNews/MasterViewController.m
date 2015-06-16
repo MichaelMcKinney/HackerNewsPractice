@@ -17,11 +17,9 @@
 -(void)awakeFromNib
 {
     self.viewModel = MasterViewModel.new;
-    NSLog(@"Did Awake");
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //return 30;
     return self.viewModel.sections;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -64,9 +62,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //assign cells from array of stories
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-    [cell FillLabelsFromStoryToSelf:self.viewModel.Stories[indexPath.row]];
+    [_viewModel fillCell:cell withIndexPath:(NSIndexPath *)indexPath];
     
     [cell.button addTarget:self action:@selector(pressedCommentsFrom:) forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
 }
 
@@ -75,21 +74,25 @@
     [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
     [self performSegueWithIdentifier:@"showComments" sender:sender];
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //sends proper info to the arrival scene
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Story *object = self.viewModel.Stories[indexPath.row];
+        Story *object = _viewModel.Stories[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        
         [controller setupStoryValue:object];
+        
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
     else if ([[segue identifier] isEqualToString:@"showComments"])
     {
         CommentViewController *controller = (CommentViewController *)[[segue destinationViewController] topViewController];
-        [controller setupCommentStoryValue:self.viewModel.commentStory];
+        [controller setupCommentStoryValue:_viewModel.commentStory];
+        
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
