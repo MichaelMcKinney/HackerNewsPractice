@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ColorChoiceViewModel.h"
 
 @interface ColorChoiceViewControllerTableViewController : UITableViewController
 
-@property (strong,nonatomic) NSMutableArray *colors;
+@property (strong,nonatomic) ColorChoiceViewModel *viewModel;
 
 @end
