@@ -34,4 +34,10 @@
     return sharedManager;
 }
 
+-(UIColor *)getColorForKey:(NSString *)key
+{
+    NSString *barColor = [_styles objectForKey:key];        //set the bar color to plist's navBar code
+    return [ColorUtil colorFromHexString:barColor];
+}
+
 @end

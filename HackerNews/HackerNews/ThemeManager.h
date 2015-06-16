@@ -15,7 +15,7 @@
 
 + (ThemeManager *)sharedManager;
 
--(UIColor *)getRefreshColor;
+-(UIColor *)getColorForKey:(NSString *)key;
 
 
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
-#import "ColorUtil.h"
 #import "StoryCell.h"
 
 @implementation StoryCell
@@ -36,30 +35,19 @@
     
 #pragma mark - COLORS
     
-
-    NSDictionary *styles = [ThemeManager sharedManager].styles;
-    
-    NSString *titleColor = [styles objectForKey:@"cellTitle"];
-    NSString *subColor = [styles objectForKey:@"cellSubtitle"];
-    NSString *BGColor = [styles objectForKey:@"cellDeselected"];
-    NSString *buttonTextColor = [styles objectForKey:@"commentButtonText"];
-    NSString *buttonColor = [styles objectForKey:@"commentButtonBG"];
-    NSString *BGSelectedColor = [styles objectForKey:@"cellSelected"];
-
-    
     UIView *bgColorView = [[UIView alloc]init];
-    bgColorView.backgroundColor = [ColorUtil colorFromHexString:BGSelectedColor];
+    bgColorView.backgroundColor = [[ThemeManager sharedManager] getColorForKey:@"cellSelected"];
     [self setSelectedBackgroundView:bgColorView];
     
-    self.backgroundColor = [ColorUtil colorFromHexString:BGColor];
+    self.backgroundColor = [[ThemeManager sharedManager] getColorForKey:@"cellDeselected"];
     
-    self.TitleLabel.textColor = [ColorUtil colorFromHexString:titleColor];
-    self.URLLabel.textColor = [ColorUtil colorFromHexString:subColor];
+    self.TitleLabel.textColor = [[ThemeManager sharedManager] getColorForKey:@"cellTitle"];
+    self.URLLabel.textColor = [[ThemeManager sharedManager] getColorForKey:@"cellSubtitle"];
     self.ScoreLabel.textColor = self.URLLabel.textColor;
     self.AuthorLabel.textColor = self.URLLabel.textColor;
     
-    [self.button setTitleColor:[ColorUtil colorFromHexString:buttonTextColor] forState:UIControlStateNormal];
-    [self.button setBackgroundColor:[ColorUtil colorFromHexString:buttonColor]];
+    [self.button setTitleColor:[[ThemeManager sharedManager] getColorForKey:@"commentButtonText"] forState:UIControlStateNormal];
+    [self.button setBackgroundColor:[[ThemeManager sharedManager] getColorForKey:@"commentButtonBG"]];
 }
 
 

@@ -9,7 +9,6 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "CommentViewController.h"
-#import "ColorUtil.h"
 #import "HackerNewsAPI.h"
 
 
@@ -37,12 +36,8 @@
     self.navigationController.toolbarHidden = YES;
     self.refreshControl = [[UIRefreshControl alloc] init];
     
-    NSDictionary *styles = [ThemeManager sharedManager].styles;
-    NSString *refreshBG = [styles objectForKey:@"refreshBG"];
-    NSString *refreshIcon = [styles objectForKey:@"refreshIcon"];
-    
-    self.refreshControl.backgroundColor = [ColorUtil colorFromHexString:refreshBG]; //make connection to theme Manager Method
-    self.refreshControl.tintColor = [ColorUtil colorFromHexString:refreshIcon];
+    self.refreshControl.backgroundColor = [[ThemeManager sharedManager] getColorForKey:@"refreshBG"]; //make connection to theme Manager Method
+    self.refreshControl.tintColor = [[ThemeManager sharedManager] getColorForKey:@"refreshIcon"];
     [self.refreshControl addTarget:self action:@selector(Refresh) forControlEvents:UIControlEventValueChanged];
 }
 -(void)loadData //pull top stories from json, create the story objects

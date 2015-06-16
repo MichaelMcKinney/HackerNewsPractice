@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
-#import "ColorUtil.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
 #import "ThemeManager.h"
@@ -19,13 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSDictionary *styles = [ThemeManager sharedManager].styles; //access the plist file that's selected
-    NSString *barColor = [styles objectForKey:@"navBar"];        //set the bar color to plist's navBar code
-    NSString *buttonColor = [styles objectForKey:@"navText"];   //set navbar buttons color to the plists navtext
-
-    [[UINavigationBar appearance] setBarTintColor:[ColorUtil colorFromHexString:barColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [ColorUtil colorFromHexString:buttonColor]}];
-    [[UINavigationBar appearance] setTintColor:[ColorUtil colorFromHexString:buttonColor]];               //set up the navbar's color
+    [[UINavigationBar appearance] setBarTintColor:[[ThemeManager sharedManager] getColorForKey:@"navBar"]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [[ThemeManager sharedManager] getColorForKey:@"navText"]}];
+    [[UINavigationBar appearance] setTintColor:[[ThemeManager sharedManager] getColorForKey:@"navButton"]];               //set up the navbar's color
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *MnavigationController = [splitViewController.viewControllers objectAtIndex:0];

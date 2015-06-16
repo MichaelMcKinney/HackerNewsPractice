@@ -8,7 +8,7 @@
 
 #import "ColorChoiceViewControllerTableViewController.h"
 #import "ThemeManager.h"
-#import "ColorUtil.h"
+
 
 @interface ColorChoiceViewControllerTableViewController ()
 
