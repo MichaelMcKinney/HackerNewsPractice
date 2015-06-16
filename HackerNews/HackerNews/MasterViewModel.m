@@ -22,15 +22,6 @@
     }
     return self;
 }
-/*
--(UIColor *)refreshColor
-{
-
-}
--(UIColor *)refreshBGColor
-{
-    
-}*/
 -(void)sortCellsByTime
 {
     [self.Stories sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]]];
@@ -46,6 +37,14 @@
 {
     self.Stories = [HackerNewsAPI getTopStories:self.count];
 }
+-(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView
+{
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:tableView];
+    NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:buttonPosition];
+    Story *object = _Stories[indexPath.row];
+    _commentStory = object;
+}
+
 
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation HackerNewsAPI
 
-+(NSMutableArray *)getTopStories:(int)numberOfStories
++(NSMutableArray *)getTopStories:(NSInteger)numberOfStories
 {
     NSMutableArray *Stories = NSMutableArray.new;
     

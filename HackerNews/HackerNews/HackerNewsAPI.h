@@ -12,7 +12,7 @@
 
 @interface HackerNewsAPI : NSObject
 
-+(NSMutableArray *)getTopStories:(int)numberOfStories;
++(NSMutableArray *)getTopStories:(NSInteger)numberOfStories;
 +(Story *)getStoryFromID:(int)ID;
 +(Comment *)getCommentFromID:(int)ID;
 

@@ -29,6 +29,7 @@
 -(void)loadData;
 -(void)ButtonPosition;
 
+-(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView;
 
 
 
