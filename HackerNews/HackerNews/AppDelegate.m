@@ -35,7 +35,7 @@
     DetailViewController *detail = (DetailViewController *)[DnavigationController topViewController];
     
     //master.delegate = detail;
-    Story *first = [[master Stories] objectAtIndex:0];      //assign initial story
+    Story *first = [[master.viewModel Stories] objectAtIndex:0];      //assign initial story
     [detail setupStoryValue:first];
     return YES;
 }

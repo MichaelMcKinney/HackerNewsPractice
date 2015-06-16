@@ -28,6 +28,7 @@
 		27BA556A1B25ED1000728F2A /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BA55691B25ED1000728F2A /* Story.m */; };
 		27D3F8211B2F497400E36800 /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8201B2F497400E36800 /* ColorUtil.m */; };
 		27D3F8251B2F4A5A00E36800 /* HackerNewsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */; };
+		27D3F82B1B2F679E00E36800 /* MasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F82A1B2F679E00E36800 /* MasterViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		27D3F8201B2F497400E36800 /* ColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
 		27D3F8231B2F4A5A00E36800 /* HackerNewsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackerNewsAPI.h; sourceTree = "<group>"; };
 		27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackerNewsAPI.m; sourceTree = "<group>"; };
+		27D3F8291B2F679E00E36800 /* MasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewModel.h; sourceTree = "<group>"; };
+		27D3F82A1B2F679E00E36800 /* MasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +188,8 @@
 		27D3F81A1B2F46AB00E36800 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				27D3F81D1B2F474800E36800 /* View Models */,
 				27D3F81B1B2F472300E36800 /* View Controllers */,
+				27D3F81D1B2F474800E36800 /* View Models */,
 				27D3F81C1B2F473400E36800 /* Views */,
 			);
 			name = Scenes;
@@ -221,6 +224,8 @@
 		27D3F81D1B2F474800E36800 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				27D3F8291B2F679E00E36800 /* MasterViewModel.h */,
+				27D3F82A1B2F679E00E36800 /* MasterViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				27D3F8251B2F4A5A00E36800 /* HackerNewsAPI.m in Sources */,
 				27BA55641B25D05000728F2A /* StoryCell.m in Sources */,
 				279200FC1B289B810054269A /* CommentViewController.m in Sources */,
+				27D3F82B1B2F679E00E36800 /* MasterViewModel.m in Sources */,
 				279201111B29F9C00054269A /* Comment.m in Sources */,
 				27BA55421B25CDA100728F2A /* MasterViewController.m in Sources */,
 				27BA556A1B25ED1000728F2A /* Story.m in Sources */,

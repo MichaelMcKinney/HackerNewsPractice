@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ColorUtil.h"
 
 @interface ThemeManager : NSObject
 
 @property (strong,nonatomic) NSDictionary *styles;
 
 + (ThemeManager *)sharedManager;
+
+-(UIColor *)getRefreshColor;
+
 
 @end
