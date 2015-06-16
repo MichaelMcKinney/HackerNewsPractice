@@ -9,19 +9,16 @@
 #import "DetailViewController.h"
 
 @implementation DetailViewController
+
 - (void)viewDidLoad //initializes the webview
 {
-    
-    //NSLog(@"DetailViewDidLoad");
     [self refreshUI];
     [super viewDidLoad];
+    
     self.webView.scalesPageToFit = YES;
     self.webView.delegate = self;
-    
-    //self.middleLabel.text = @"No Story Selected";
-    //self.middleLabel.font = [UIFont systemFontOfSize:30];
-    //self.webView.contentMode = UIViewContentModeScaleAspectFit;
 }
+
 - (void)webViewDidStartLoad:(UIWebView *)webView //starts animating the spinner
 {
     [self.activity startAnimating];
@@ -35,55 +32,29 @@
 }
 
 - (void)didReceiveMemoryWarning
-
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)setupStoryValue:(Story *)story //initialize the story to display
 {
-    //NSLog(@"settingStory");
-    if (self.story != story)
-        {self.story = story;}
+    _viewModel = DetailViewModel.new;
+    
+    [_viewModel setupStory:story];
     [self refreshUI];
 }
 
 -(void)refreshUI//load in the url from the story to the UIwebview
 {
-    if (self.story.ID==0)
+    if ([_viewModel.story.type  isEqualToString:@"job"])
     {
-        //NSLog(@"ref ONE");
-
-        self.titleLabel.text = @"";
-        
-        //self.webView.alpha=0;
-        return;
+        [self.webView loadHTMLString:[_viewModel getText] baseURL:nil];
     }
     else
     {
-        self.webView.alpha=1;
-
-        self.middleLabel.text = @"";
-        //NSLog(@"ref TWO");
-        
-        if ([self.story.type  isEqualToString:@"job"])
-        {
-            //NSLog([NSString stringWithFormat:@"%@",self.story.url]);
-            //NSLog([NSString stringWithFormat:@"%@",self.story.text]);
-            [self.webView loadHTMLString:self.story.text baseURL:nil];
-            
-        }
-        else
-        {
-           // NSLog(@"refreshUI");
-            NSURLRequest *request = [NSURLRequest requestWithURL:self.story.url];
-            [self.webView loadRequest:request];
-        }
-        
-        return;
+        NSURLRequest *request = [NSURLRequest requestWithURL:[_viewModel getURL]];
+        [self.webView loadRequest:request];
     }
-     
 }
 
 -(void)selectedStory:(Story *)story //assign story value

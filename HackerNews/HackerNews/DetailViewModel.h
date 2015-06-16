@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StoryCell.h"
 
 @interface DetailViewModel : NSObject
 
+@property (strong, nonatomic) Story *story;
+
+
+-(void)setupStory:(Story *)story;
+-(NSString *)getText;
+-(NSURL *)getURL;
 @end

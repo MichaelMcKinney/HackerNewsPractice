@@ -30,6 +30,7 @@
 		27D3F8251B2F4A5A00E36800 /* HackerNewsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8241B2F4A5A00E36800 /* HackerNewsAPI.m */; };
 		27D3F82B1B2F679E00E36800 /* MasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F82A1B2F679E00E36800 /* MasterViewModel.m */; };
 		27D3F82E1B3087E700E36800 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F82D1B3087E700E36800 /* DetailViewModel.m */; };
+		27D3F8311B308E8C00E36800 /* CommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8301B308E8C00E36800 /* CommentViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		27D3F82A1B2F679E00E36800 /* MasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewModel.m; sourceTree = "<group>"; };
 		27D3F82C1B3087E700E36800 /* DetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
 		27D3F82D1B3087E700E36800 /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
+		27D3F82F1B308E8C00E36800 /* CommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewModel.h; sourceTree = "<group>"; };
+		27D3F8301B308E8C00E36800 /* CommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,8 @@
 				27D3F82A1B2F679E00E36800 /* MasterViewModel.m */,
 				27D3F82C1B3087E700E36800 /* DetailViewModel.h */,
 				27D3F82D1B3087E700E36800 /* DetailViewModel.m */,
+				27D3F82F1B308E8C00E36800 /* CommentViewModel.h */,
+				27D3F8301B308E8C00E36800 /* CommentViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				27BA553C1B25CDA100728F2A /* main.m in Sources */,
 				27BA55451B25CDA100728F2A /* DetailViewController.m in Sources */,
 				2792010E1B29F99E0054269A /* CommentCell.m in Sources */,
+				27D3F8311B308E8C00E36800 /* CommentViewModel.m in Sources */,
 				279200FF1B28ABF70054269A /* ThemeManager.m in Sources */,
 				2792010B1B28C5F70054269A /* ColorChoiceViewControllerTableViewController.m in Sources */,
 				27D3F8211B2F497400E36800 /* ColorUtil.m in Sources */,

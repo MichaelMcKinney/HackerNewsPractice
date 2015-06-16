@@ -10,4 +10,34 @@
 
 @implementation DetailViewModel
 
+-(id)init
+{
+    if ((self=[super init]))
+    {
+        _story = nil;
+        
+        
+    }
+    return self;
+}
+
+
+-(void)setupStory:(Story *)story
+{
+    if (_story != story)
+    {
+        _story = story;
+    }
+}
+
+-(NSString *)getText
+{
+    return _story.text;
+}
+
+-(NSURL *)getURL
+{
+    return _story.url;
+}
+
 @end

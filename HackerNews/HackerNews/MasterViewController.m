@@ -62,17 +62,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //assign cells from array of stories
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-    [_viewModel fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:self]; //Target:self Action:@selector(pressedCommentsFrom:)];
+    [_viewModel fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:self];
     return cell;
 }
 
-/*
--(void)pressedCommentsFrom:(id)sender //locates which comments button was pressed and performs a segue
-{
-    [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
-    [self performSegueWithIdentifier:@"showComments" sender:sender];
-}
-*/
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //sends proper info to the arrival scene
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
