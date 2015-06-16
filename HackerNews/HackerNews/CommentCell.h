@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Comment.h"
+#import "CommentCellViewModel.h"
 
 @interface CommentCell : UITableViewCell
 
@@ -15,6 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (assign, nonatomic) CGFloat contentHeight;
+
+@property (strong, nonatomic) CommentCellViewModel *viewModel;
+
 
 -(void)FillLabelsFromCommentToSelf:(Comment *)comment;
 

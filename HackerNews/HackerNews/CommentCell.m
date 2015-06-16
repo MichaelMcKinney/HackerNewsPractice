@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib
 {
-    //initialize
+    _viewModel = CommentCellViewModel.new;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,17 +23,17 @@
 
 -(void)FillLabelsFromCommentToSelf:(Comment *)comment
 {
-    self.TitleLabel.text = comment.author;
+    [_viewModel assignComment:comment];
+    
+    self.TitleLabel.text = _viewModel.author;
     self.webView.scrollView.scrollEnabled = NO;
     self.webView.scrollView.bounces = NO;
     
-    [self.webView loadHTMLString:comment.text baseURL:nil];
+    [self.webView loadHTMLString:[_viewModel getCommentText] baseURL:nil];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    self.contentHeight = self.webView.scrollView.contentSize.height;
-}
+
+
 
 
 @end

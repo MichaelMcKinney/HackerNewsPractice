@@ -33,6 +33,7 @@
 		27D3F8311B308E8C00E36800 /* CommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8301B308E8C00E36800 /* CommentViewModel.m */; };
 		27D3F8341B30AC7200E36800 /* ColorChoiceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8331B30AC7200E36800 /* ColorChoiceViewModel.m */; };
 		27D3F8371B30B3C500E36800 /* StoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8361B30B3C500E36800 /* StoryViewModel.m */; };
+		27D3F83A1B30BE6C00E36800 /* CommentCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3F8391B30BE6C00E36800 /* CommentCellViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		27D3F8331B30AC7200E36800 /* ColorChoiceViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChoiceViewModel.m; sourceTree = "<group>"; };
 		27D3F8351B30B3C500E36800 /* StoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewModel.h; sourceTree = "<group>"; };
 		27D3F8361B30B3C500E36800 /* StoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewModel.m; sourceTree = "<group>"; };
+		27D3F8381B30BE6C00E36800 /* CommentCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCellViewModel.h; sourceTree = "<group>"; };
+		27D3F8391B30BE6C00E36800 /* CommentCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCellViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,8 @@
 				27D3F8331B30AC7200E36800 /* ColorChoiceViewModel.m */,
 				27D3F8351B30B3C500E36800 /* StoryViewModel.h */,
 				27D3F8361B30B3C500E36800 /* StoryViewModel.m */,
+				27D3F8381B30BE6C00E36800 /* CommentCellViewModel.h */,
+				27D3F8391B30BE6C00E36800 /* CommentCellViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				27BA553C1B25CDA100728F2A /* main.m in Sources */,
 				27BA55451B25CDA100728F2A /* DetailViewController.m in Sources */,
 				2792010E1B29F99E0054269A /* CommentCell.m in Sources */,
+				27D3F83A1B30BE6C00E36800 /* CommentCellViewModel.m in Sources */,
 				27D3F8341B30AC7200E36800 /* ColorChoiceViewModel.m in Sources */,
 				27D3F8311B308E8C00E36800 /* CommentViewModel.m in Sources */,
 				279200FF1B28ABF70054269A /* ThemeManager.m in Sources */,
