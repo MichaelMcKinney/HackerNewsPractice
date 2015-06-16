@@ -16,18 +16,25 @@
  @property (strong, nonatomic)  NSString *author;
  @property (strong, nonatomic)  NSString *url;
 */
-    
+-(void)awakeFromNib
+{
+    _viewModel = StoryViewModel.new;
+}
+
 -(void)FillLabelsFromStoryToSelf:(Story *)story //Copy ALL Properties from the Story to self
 
 {
-    self.TitleLabel.text = story.title;
-    self.AuthorLabel.text = story.author;
-    self.ScoreLabel.text = [NSString stringWithFormat:@"%d", story.score];
-    self.URLLabel.text = story.url.host;
+    [_viewModel assignStory:story];
+    
+    self.TitleLabel.text = _viewModel.title;
+    self.AuthorLabel.text = _viewModel.author;
+    self.ScoreLabel.text = [_viewModel getScoreText];
+    self.URLLabel.text = [_viewModel getURLText];
+    
     self.TitleLabel.adjustsFontSizeToFitWidth = NO;
     self.TitleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
    
-    [self.button setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)[story.kids count]] forState:UIControlStateNormal];
+    [self.button setTitle:[_viewModel getButtonText] forState:UIControlStateNormal];
     self.button.titleLabel.font = [UIFont systemFontOfSize:18.0];
     
     [_button addTarget:_delegate action:@selector(didSelectFromSender:) forControlEvents:UIControlEventTouchUpInside];

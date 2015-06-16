@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Story.h"
+#import "StoryViewModel.h"
 
 @protocol StoryCellDelegate <NSObject>
 @required
@@ -17,6 +17,10 @@
 @end
 
 @interface StoryCell : UITableViewCell
+
+@property (strong, nonatomic) StoryViewModel *viewModel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *TitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *AuthorLabel;
