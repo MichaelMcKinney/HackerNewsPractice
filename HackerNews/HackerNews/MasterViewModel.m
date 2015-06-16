@@ -16,7 +16,7 @@
     {
         self.firstTimeLoading = YES; //keeps track of the first time for hte refresh property
         self.count = 30;
-        self.Stories = [HackerNewsAPI getTopStories:self.count];
+        [self loadData];
         self.commentStory = nil;
         self.sections = 1;
     }
@@ -41,5 +41,11 @@
     [self.Stories sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO]]];
 
 }
+
+-(void)loadData
+{
+    self.Stories = [HackerNewsAPI getTopStories:self.count];
+}
+
 
 @end

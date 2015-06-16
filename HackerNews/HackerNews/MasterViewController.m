@@ -42,6 +42,7 @@
 }
 -(void)loadData //pull top stories from json, create the story objects
 {
+    [self.viewModel loadData];
     [self.tableView reloadData];
 }
 

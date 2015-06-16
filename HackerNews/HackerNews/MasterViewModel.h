@@ -26,7 +26,7 @@
 -(UIColor *)refreshBGColor;
 -(void)sortCellsByTime;
 -(void)sortCellsByScore;
-
+-(void)loadData;
 -(void)ButtonPosition;
 
 
