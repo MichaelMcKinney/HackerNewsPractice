@@ -12,7 +12,6 @@
 @interface DetailViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *middleLabel;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;

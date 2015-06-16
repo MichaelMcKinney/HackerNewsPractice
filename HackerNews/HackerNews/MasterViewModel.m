@@ -38,9 +38,10 @@
     self.Stories = [HackerNewsAPI getTopStories:self.count];
 }
 
--(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath;
+-(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:(id)delegate
 {
     [cell FillLabelsFromStoryToSelf:_Stories[indexPath.row]];
+    cell.delegate = delegate;
 }
 
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView

@@ -20,15 +20,10 @@
 @property (assign, nonatomic) NSInteger count;
 @property (assign, nonatomic) NSInteger sections;
 
-
-
--(UIColor *)refreshColor;
--(UIColor *)refreshBGColor;
 -(void)sortCellsByTime;
 -(void)sortCellsByScore;
 -(void)loadData;
--(void)ButtonPosition;
--(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath;
+-(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:(id)delegate;// Target:(id)target Action:(SEL)action;
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView;
 
 

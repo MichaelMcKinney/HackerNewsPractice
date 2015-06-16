@@ -12,7 +12,7 @@
 #import "DetailViewController.h"
 
 @class MasterViewModel;
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <StoryCellDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController; //able to pass contents to article viewer
 

@@ -62,19 +62,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //assign cells from array of stories
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-    [_viewModel fillCell:cell withIndexPath:(NSIndexPath *)indexPath];
-    
-    [cell.button addTarget:self action:@selector(pressedCommentsFrom:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [_viewModel fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:self]; //Target:self Action:@selector(pressedCommentsFrom:)];
     return cell;
 }
 
+/*
 -(void)pressedCommentsFrom:(id)sender //locates which comments button was pressed and performs a segue
 {
     [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
     [self performSegueWithIdentifier:@"showComments" sender:sender];
 }
-
+*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //sends proper info to the arrival scene
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
@@ -96,6 +94,12 @@
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
+}
+
+-(void)didSelectFromSender:(id)sender
+{
+    [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
+    [self performSegueWithIdentifier:@"showComments" sender:sender];
 }
 
 @end

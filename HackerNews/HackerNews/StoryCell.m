@@ -30,7 +30,8 @@
     [self.button setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)[story.kids count]] forState:UIControlStateNormal];
     self.button.titleLabel.font = [UIFont systemFontOfSize:18.0];
     
-    
+    [_button addTarget:_delegate action:@selector(didSelectFromSender:) forControlEvents:UIControlEventTouchUpInside];
+
     
     
 #pragma mark - COLORS
@@ -49,8 +50,11 @@
     [self.button setTitleColor:[[ThemeManager sharedManager] getColorForKey:@"commentButtonText"] forState:UIControlStateNormal];
     [self.button setBackgroundColor:[[ThemeManager sharedManager] getColorForKey:@"commentButtonBG"]];
 }
-
-
-
+/*
+-(void)setupButtonWithTarget:(id)target Action:(SEL)action
+{
+    [_button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+*/
 
 @end
