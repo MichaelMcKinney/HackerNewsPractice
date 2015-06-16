@@ -6,15 +6,12 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Story.h"
+#import "CommentViewModel.h"
 
 @interface CommentViewController : UITableViewController
 
-@property (weak,nonatomic) Story *commentStory;
-@property (strong, nonatomic) NSMutableArray *heightArray;
+@property (strong,nonatomic) CommentViewModel* viewModel;
 
 -(void)setupCommentStoryValue:(Story *)story;
-
 
 @end

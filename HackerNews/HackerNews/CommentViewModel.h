@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Story.h"
+#import "CommentCell.h"
+#import "HackerNewsAPI.h"
 
 @interface CommentViewModel : NSObject
+
+@property (strong,nonatomic) Story *commentStory;
+@property (assign,nonatomic) NSInteger numKids;
+@property (assign, nonatomic) NSInteger sections;
+
+-(void)setupCommentStory:(Story*)story;
+-(NSInteger)getNumRows;
+-(CommentCell *)setupCell:(CommentCell*)cell WithIndexPath:(NSIndexPath *)indexPath;
 
 @end

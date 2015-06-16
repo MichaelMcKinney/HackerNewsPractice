@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ColorChoiceViewControllerTableViewController : UITableViewController
-    @property (strong,nonatomic) NSMutableArray *colors;
+
+@property (strong,nonatomic) NSMutableArray *colors;
 
 @end

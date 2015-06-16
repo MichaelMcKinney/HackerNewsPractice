@@ -83,17 +83,20 @@
     else if ([[segue identifier] isEqualToString:@"showComments"])
     {
         CommentViewController *controller = (CommentViewController *)[[segue destinationViewController] topViewController];
+        
+        [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
         [controller setupCommentStoryValue:_viewModel.commentStory];
         
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
+        
     }
 }
 
 -(void)didSelectFromSender:(id)sender
 {
-    [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
-    [self performSegueWithIdentifier:@"showComments" sender:sender];
+    
+    //[self performSegueWithIdentifier:@"showComments" sender:sender];
 }
 
 @end

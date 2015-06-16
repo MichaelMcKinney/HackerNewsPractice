@@ -15,8 +15,6 @@
     if ((self=[super init]))
     {
         _story = nil;
-        
-        
     }
     return self;
 }

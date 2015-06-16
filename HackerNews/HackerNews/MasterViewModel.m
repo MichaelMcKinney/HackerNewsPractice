@@ -49,7 +49,7 @@
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:tableView];
     NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:buttonPosition];
     Story *object = _Stories[indexPath.row];
-    _commentStory = object;
+    _commentStory = object;    
 }
 
 
