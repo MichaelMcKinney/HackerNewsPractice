@@ -19,6 +19,5 @@
 
 -(void)setupCommentStory:(Story*)story;
 -(NSInteger)getNumRows;
--(CommentCell *)setupCell:(CommentCell*)cell WithIndexPath:(NSIndexPath *)indexPath;
-
+-(Comment *)getCommentAtIndex:(NSInteger)Index;
 @end

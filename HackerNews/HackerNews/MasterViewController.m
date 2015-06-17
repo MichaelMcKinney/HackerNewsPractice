@@ -18,6 +18,7 @@
 {
     self.viewModel = MasterViewModel.new;
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.viewModel.sections;
@@ -62,17 +63,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath //assign cells from array of stories
 {
     StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
-    [_viewModel fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:self];
+    [cell FillLabelsFromStoryToSelf:[_viewModel StoryAtIndex:indexPath.row]];
+    
     return cell;
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //sends proper info to the arrival scene
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Story *object = _viewModel.Stories[indexPath.row];
+        
+        Story *object = [_viewModel StoryAtIndex:indexPath.row];
+        
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         
         [controller setupStoryValue:object];
@@ -85,6 +89,7 @@
         CommentViewController *controller = (CommentViewController *)[[segue destinationViewController] topViewController];
         
         [_viewModel setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)self.tableView];
+        
         [controller setupCommentStoryValue:_viewModel.commentStory];
         
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
@@ -93,11 +98,6 @@
     }
 }
 
--(void)didSelectFromSender:(id)sender
-{
-    
-    //[self performSegueWithIdentifier:@"showComments" sender:sender];
-}
 
 @end
 

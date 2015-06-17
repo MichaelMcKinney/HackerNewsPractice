@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "StoryViewModel.h"
 
-@protocol StoryCellDelegate <NSObject>
-@required
-
--(void)didSelectFromSender:(id)sender;
-
-@end
 
 @interface StoryCell : UITableViewCell
 
@@ -28,10 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
-@property  (weak, nonatomic) id delegate;
 
 -(void)FillLabelsFromStoryToSelf:(Story *)story;
-//-(void)setupButtonWithTarget:(id)target Action:(SEL)action;
 
 
 @end

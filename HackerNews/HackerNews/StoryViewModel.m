@@ -14,45 +14,33 @@
 {
     _story = story;
     
-    _author = _story.author;
-    _descendants = _story.descendants;
-    _ID = _story.ID;
-    _kids = _story.kids;
-    _score = _story.score;
-    _time = _story.time;
-    _title = _story.title;
-    _type = _story.type;
-    _text = _story.text;
-    _url = _story.url;
-    _json = _story.json;
 }
 
 -(NSString *)getScoreText
 {
-    return [NSString stringWithFormat:@"%d", _score];
+    return [NSString stringWithFormat:@"%d", _story.score];
 }
 
 -(NSString *)getURLText
 {
-    return _url.host;
+    return _story.url.host;
 }
 -(NSString *)getButtonText
 {
-    return [NSString stringWithFormat:@"%lu",(unsigned long)[_kids count]];
+    return [NSString stringWithFormat:@"%lu",(unsigned long)[_story.kids count]];
+}
+-(NSString *)getTitleText
+{
+    return _story.title;
+}
+
+-(NSString *)getAuthorText
+{
+    return _story.author;
 }
 
 
 
-/*self.TitleLabel.text = _viewModel.title;
- self.AuthorLabel.text = _viewModel.author;
- self.ScoreLabel.text = [NSString stringWithFormat:@"%d", story.score];
- self.URLLabel.text = story.url.host;
- self.TitleLabel.adjustsFontSizeToFitWidth = NO;
- self.TitleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
- 
- [self.button setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)[story.kids count]] forState:UIControlStateNormal];
- 
-*/
 
 
 @end

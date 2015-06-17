@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "ThemeManager.h"
+//#import <UIKit/UIKit.h>
+//#import "ThemeManager.h"
 
 @interface ColorChoiceViewModel : NSObject
 
@@ -16,6 +16,6 @@
 @property (assign,nonatomic) NSInteger sections;
 @property (assign,nonatomic) NSInteger rows;
 
--(void)selectedColor:(NSIndexPath *)indexPath;
--(UITableViewCell *)prepareCell:(UITableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath;
+-(void)selectedColor:(NSInteger)index;
+-(NSString *)StringAtIndex:(NSInteger)index;
 @end

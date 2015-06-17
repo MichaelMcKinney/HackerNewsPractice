@@ -29,7 +29,24 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CommentCell *cell = (CommentCell *)[tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-    return [_viewModel setupCell:cell WithIndexPath:(NSIndexPath *)indexPath];
+    
+
+    if (_viewModel.numKids!=0)
+    {
+        
+        [cell FillLabelsFromCommentToSelf:[_viewModel getCommentAtIndex:indexPath.row]];
+    }
+    
+    else
+    {
+        cell.TitleLabel.text = @"";
+        cell.textLabel.text = @"There have been no comments yet...";
+    }
+    
+    return cell;
+
 }
+
+
 
 @end

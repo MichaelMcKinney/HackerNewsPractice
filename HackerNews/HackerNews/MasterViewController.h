@@ -6,13 +6,12 @@
 //  Copyright (c) 2015 Michael McKinney. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "StoryCell.h"
 #import "MasterViewModel.h"
 #import "DetailViewController.h"
 
 @class MasterViewModel;
-@interface MasterViewController : UITableViewController <StoryCellDelegate>
+@interface MasterViewController : UITableViewController 
 
 @property (strong, nonatomic) DetailViewController *detailViewController; //able to pass contents to article viewer
 

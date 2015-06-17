@@ -23,9 +23,8 @@
 -(void)sortCellsByTime;
 -(void)sortCellsByScore;
 -(void)loadData;
--(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:(id)delegate;// Target:(id)target Action:(SEL)action;
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView;
 
-
+-(Story *)StoryAtIndex:(NSInteger)index;
 
 @end

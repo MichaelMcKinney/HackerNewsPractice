@@ -26,8 +26,8 @@
 {
     [_viewModel assignStory:story];
     
-    self.TitleLabel.text = _viewModel.title;
-    self.AuthorLabel.text = _viewModel.author;
+    self.TitleLabel.text = [_viewModel getTitleText]; // property of the storyviewModel for these
+    self.AuthorLabel.text = [_viewModel getAuthorText];
     self.ScoreLabel.text = [_viewModel getScoreText];
     self.URLLabel.text = [_viewModel getURLText];
     
@@ -37,8 +37,9 @@
     [self.button setTitle:[_viewModel getButtonText] forState:UIControlStateNormal];
     self.button.titleLabel.font = [UIFont systemFontOfSize:18.0];
     
-    [_button addTarget:_delegate action:@selector(didSelectFromSender:) forControlEvents:UIControlEventTouchUpInside];
+    //[_button addTarget:_delegate action:@selector(didSelectFromSender:) forControlEvents:UIControlEventTouchUpInside];
 
+    
     
     
 #pragma mark - COLORS

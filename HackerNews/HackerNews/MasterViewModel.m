@@ -32,17 +32,12 @@
     [self.Stories sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO]]];
 
 }
-
 -(void)loadData
 {
+
     self.Stories = [HackerNewsAPI getTopStories:self.count];
 }
 
--(void)fillCell:(StoryCell *)cell withIndexPath:(NSIndexPath *)indexPath SetDelegate:(id)delegate
-{
-    [cell FillLabelsFromStoryToSelf:_Stories[indexPath.row]];
-    cell.delegate = delegate;
-}
 
 -(void)setViewModelCommentStoryFrom:(id)sender andTableView:(UITableView*)tableView
 {
@@ -51,7 +46,10 @@
     Story *object = _Stories[indexPath.row];
     _commentStory = object;    
 }
-
+-(Story *)StoryAtIndex:(NSInteger)index
+{
+    return _Stories[index];
+}
 
 
 @end

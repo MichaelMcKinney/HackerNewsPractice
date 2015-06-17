@@ -7,7 +7,7 @@
 //
 
 #import "Comment.h"
-#import "HackerNewsAPI.h"
+//#import "HackerNewsAPI.h"
 
 @implementation Comment
 

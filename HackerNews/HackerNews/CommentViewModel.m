@@ -39,22 +39,10 @@
         return 1;
     }
 }
--(CommentCell *)setupCell:(CommentCell *)cell WithIndexPath:(NSIndexPath *)indexPath
+-(Comment *)getCommentAtIndex:(NSInteger)Index
 {
-    if (_numKids!=0)
-    {
-        Comment *comment = Comment.new;
-        comment = [HackerNewsAPI getCommentFromID:[_commentStory.kids[indexPath.row] intValue]]; //use hacker news call
-        [cell FillLabelsFromCommentToSelf:comment];
-    }
-    
-    else
-    {
-        cell.TitleLabel.text = @"";
-        cell.textLabel.text = @"There have been no comments yet...";
-    }
-
-    return cell;
+    Comment *comment = [HackerNewsAPI getCommentFromID:[_commentStory.kids[Index] intValue]];
+    return comment;
 }
 
 @end

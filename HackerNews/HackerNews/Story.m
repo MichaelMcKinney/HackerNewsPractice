@@ -7,8 +7,8 @@
 //
 
 #import "Story.h"
-#import "Comment.h"
-#import "HackerNewsAPI.h"
+//#import "Comment.h"
+//#import "HackerNewsAPI.h"
 @implementation Story
 
 -(id)init

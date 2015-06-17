@@ -23,26 +23,25 @@
     return self;
 }
 
--(UITableViewCell *)prepareCell:(UITableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath
+-(NSString *)StringAtIndex:(NSInteger)index
 {
-    if (indexPath.row == 0)
+    if (index == 0)
     {
-        cell.backgroundColor = [ColorUtil colorFromHexString:@"#5C949C"];
+        return @"#5C949C"; //push string to viewController
     }
     else
     {
-        cell.backgroundColor = [ColorUtil colorFromHexString:@"#157015"];
+        return @"#157015";
     }
-    return cell;
 }
 
--(void)selectedColor:(NSIndexPath *)indexPath
+-(void)selectedColor:(NSInteger)index
 {
-    if (indexPath.row == 0)
+    if (index == 0)
     {
         [[NSUserDefaults standardUserDefaults] setValue:@"redTheme" forKey:@"theme"];
     }
-    else if (indexPath.row ==1)
+    else if (index == 1)
     {
         [[NSUserDefaults standardUserDefaults] setValue:@"greenTheme" forKey:@"theme"];
     }

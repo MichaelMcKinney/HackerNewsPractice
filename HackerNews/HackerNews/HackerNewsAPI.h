@@ -10,10 +10,12 @@
 #import "Story.h"
 #import "Comment.h"
 
+//@class Story;
+//@class Comment;
 @interface HackerNewsAPI : NSObject
 
 +(NSMutableArray *)getTopStories:(NSInteger)numberOfStories;
 +(Story *)getStoryFromID:(int)ID;
 +(Comment *)getCommentFromID:(int)ID;
-
+//-(BOOL)Connected;
 @end

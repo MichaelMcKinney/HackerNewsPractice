@@ -7,6 +7,8 @@
 //
 
 #import "HackerNewsAPI.h"
+#import "Story.h"
+
 @interface HackerNewsAPI()
 +(NSDictionary *)requestJSONDictionaryUsingID:(int)ID;
 @end
@@ -33,7 +35,14 @@
         i++;
     }
     return Stories;
+    }
+/*
+-(BOOL)Connected
+{
+    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"]];
+    return ( URLString != NULL ) ? YES : NO;
 }
+*/
 
 +(Story *)getStoryFromID:(int)ID
 {

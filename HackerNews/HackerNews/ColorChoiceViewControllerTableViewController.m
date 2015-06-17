@@ -42,12 +42,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"colorCell" forIndexPath:indexPath];
-    return [_viewModel prepareCell:cell AtIndexPath:indexPath];
+    NSString* Hex = [_viewModel StringAtIndex:indexPath.row];
+    cell.backgroundColor = [ColorUtil colorFromHexString:Hex];
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_viewModel selectedColor:indexPath];
+    [_viewModel selectedColor:indexPath.row];
     [self dismissViewControllerAnimated:YES completion:^{}];
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadView" object:nil];
 }

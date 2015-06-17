@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StoryCell.h"
+#import "Story.h"
 
 @interface DetailViewModel : NSObject
 
